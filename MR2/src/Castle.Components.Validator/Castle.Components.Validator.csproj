@@ -76,7 +76,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NET45-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <OutputPath>bin\NET45-Debug\</OutputPath>
     <DefineConstants>TRACE;DEBUG;DOTNET DOTNET40 DOTNET45</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -87,7 +88,8 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NET45-Release|AnyCPU'">
-    <TargetFrameworkProfile></TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <OutputPath>bin\NET45-Release\</OutputPath>
     <DefineConstants>TRACE;DOTNET DOTNET40 DOTNET45</DefineConstants>
     <DocumentationFile>bin\NET45-Release\Castle.Components.Validator.xml</DocumentationFile>
@@ -99,6 +101,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
@@ -253,6 +258,7 @@
     <None Include="..\..\buildscripts\CastleKey.snk">
       <Link>CastleKey.snk</Link>
     </None>
+    <None Include="packages.config" />
     <None Include="Validator.cd" />
   </ItemGroup>
   <ItemGroup>

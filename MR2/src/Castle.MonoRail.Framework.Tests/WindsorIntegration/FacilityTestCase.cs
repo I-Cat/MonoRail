@@ -30,7 +30,7 @@ namespace Castle.MonoRail.Framework.Tests.WindsorIntegration
 		public void Init()
 		{
 			container = new WindsorContainer();
-			container.AddFacility("mr", new MonoRailFacility());
+			container.AddFacility(new MonoRailFacility());
 		}
 
 		[Test]

@@ -478,7 +478,7 @@ namespace Castle.MonoRail.Framework.Helpers
 			{
 				if (logger.IsErrorEnabled)
 				{
-					logger.Error("No public property '{0}' found on type '{1}'", property, type.FullName);
+					logger.ErrorFormat("No public property '{0}' found on type '{1}'", property, type.FullName);
 				}
 
 				return null;

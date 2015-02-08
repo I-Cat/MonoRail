@@ -67,7 +67,7 @@ namespace Castle.MonoRail.Framework.Services.AjaxProxyGenerator
                 return WrapProxyIfNeeded(result);
             }
 
-            logger.Debug("Ajax Proxy for area: '{0}', controller: '{1}' was not found. Generating a new one", area, controller);
+            logger.DebugFormat("Ajax Proxy for area: '{0}', controller: '{1}' was not found. Generating a new one", area, controller);
 
             var controllerType = controllerTree.GetController(area, controller);
 

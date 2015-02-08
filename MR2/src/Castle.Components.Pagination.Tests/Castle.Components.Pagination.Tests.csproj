@@ -107,6 +107,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.3.3\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\nunit.framework.dll</HintPath>
@@ -129,6 +132,9 @@
       <Project>{03FF90E2-1DDC-4E60-BDEA-86BF9B31130C}</Project>
       <Name>Castle.Components.Pagination</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(RootPath)\Settings.proj" />

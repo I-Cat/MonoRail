@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using System;
 using Castle.MicroKernel.Registration;
 
 namespace Castle.MonoRail.WindsorExtension
@@ -86,7 +87,15 @@ namespace Castle.MonoRail.WindsorExtension
 		{
 			public IServiceProviderEx LocateProvider()
 			{
-				return WindsorContainerAccessorUtil.ObtainContainer();
+				var container = WindsorContainerAccessorUtil.ObtainContainer();
+				try
+				{
+					return (IServiceProviderEx)container;
+				}
+				catch (InvalidCastException ex)
+				{
+					throw new MonoRailException("The container from your HttpApplication subclass should implement IServiceProviderEx.", ex);
+				}
 			}
 		}
 	}
